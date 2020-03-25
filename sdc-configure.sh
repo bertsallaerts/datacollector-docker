@@ -19,14 +19,12 @@ set -x
 if [ ! -d "${SDC_DIST}" ]; then
 
     # Download and extract SDC.
-    for f in /tmp/*.tgz; do
-        [ -e "$f" ] && mv "$f" /tmp/sdc.tgz || curl -o /tmp/sdc.tgz -L "${SDC_URL}"
-        break
-    done
+    curl -o /tmp/sdc.tgz -L "${SDC_URL}"
+
 
     mkdir "${SDC_DIST}"
     
-    tar -xvf /tmp/sdc.tgz --strip-components 1 -C "${SDC_DIST}"
+    tar -xzf /tmp/sdc.tgz --strip-components 1 -C "${SDC_DIST}"
     rm -rf /tmp/sdc.tgz
 
     # Move configuration to /etc/sdc
