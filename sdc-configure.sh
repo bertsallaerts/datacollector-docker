@@ -25,6 +25,7 @@ if [ ! -d "${SDC_DIST}" ]; then
     done
 
     mkdir "${SDC_DIST}"
+    
     tar -xvf /tmp/sdc.tgz --strip-components 1 -C "${SDC_DIST}"
     rm -rf /tmp/sdc.tgz
 
