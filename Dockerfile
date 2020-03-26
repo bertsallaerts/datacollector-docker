@@ -63,6 +63,8 @@ ENV STREAMSETS_LIBRARIES_EXTRA_DIR="${SDC_DIST}/streamsets-libs-extras"
 COPY sdc-configure.sh *.tgz /tmp/
 RUN /tmp/sdc-configure.sh
 
+RUN sudo chown -R sdc:sdc ${SDC_HOME}
+
 # Install any additional stage libraries if requested
 ARG SDC_LIBS
 RUN if [ -n "${SDC_LIBS}" ]; then "${SDC_DIST}/bin/streamsets" stagelibs -install="${SDC_LIBS}"; fi
