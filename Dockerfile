@@ -38,7 +38,7 @@ ARG SDC_GID=20159
 
 # Begin Data Collector installation
 ARG SDC_VERSION=3.13.0
-ARG SDC_URL=https://archives.streamsets.com/datacollector/3.13.0/tarball/streamsets-datacollector-core-${SDC_VERSION}.tgz
+ARG SDC_URL=https://archives.streamsets.com/datacollector/3.13.0/tarball/streamsets-datacollector-all-${SDC_VERSION}.tgz
 ARG SDC_USER=sdc
 # SDC_HOME is where executables and related files are installed. Used in setup_mapr script.
 ARG SDC_HOME="/opt/streamsets-datacollector-${SDC_VERSION}"
